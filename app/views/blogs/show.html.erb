@@ -1,0 +1,16 @@
+<div class="col-sm-8 blog-main">
+
+  <h2><%= @blog.title %></h2>
+
+  <%= render 'blog_breadcrumb' %>
+
+  <div class="blog-body">
+    <%= markdown @blog.body %>
+  </div>
+
+  <%= render 'comments/comment_form' %>
+
+  <div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @blog.comments %>
+  </div>
+</div>
