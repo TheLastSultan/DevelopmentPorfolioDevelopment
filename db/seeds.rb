@@ -1,7 +1,7 @@
 User.create!(
-  email: "test@test.com",
-  password: "asdfasdf",
-  password_confirmation: "asdfasdf",
+  email: "mozeiny@gmail.com",
+  password: "allah199",
+  password_confirmation: "allah199",
   name: "Admin User",
   roles: "site_admin"
 )
@@ -18,15 +18,15 @@ User.create!(
 puts "1 regular user created"
 
 
-3.times do |topic|
-  Topic.create!(
-    title: "Topic #{topic}"
-  )
-end
+# 1.times do |topic|
+#   Topic.create!(
+#     title: "Mohamed's development Journey"
+#   )
+# end
 
-puts "3 Topics created"
+# puts "3 Topics created"
 
-10.times do |blog|
+
   Blog.create!(
     title: "My Blog Post #{blog}",
     body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
@@ -38,7 +38,7 @@ puts "10 blog posts created"
 
 Skill.create!(
   title: "SQL",
-  percent_utilized: 70
+  percent_utilized: 77
 )
 
 Skill.create!(
@@ -57,8 +57,18 @@ Skill.create!(
 )
 
 Skill.create!(
+  title: "Javascript",
+  percent_utilized: 40
+)
+
+Skill.create!(
   title: "React",
   percent_utilized: 66
+)
+
+Skill.create!(
+  title: "MATLAB",
+  percent_utilized: 85
 )
 
 puts "5 skills created"
@@ -83,7 +93,7 @@ puts "5 skills created"
 #   )
 # end
 
-puts "9 portfolio items created"
+# puts "9 portfolio items created"
 
 # 3.times do |technology|
 #   Portfolio.last.technologies.create!(
@@ -91,4 +101,4 @@ puts "9 portfolio items created"
 #   )
 # end
 
-# puts "3 technologies created"
+puts "3 technologies created"
