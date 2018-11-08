@@ -23,7 +23,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -84,6 +84,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_cable.allowed_request_origins = ['https://devcamp-portfolio.herokuapp.com', 'http://devcamp-portfolio.herokuapp.com']
-  config.action_cable.url = "wss://devcamp-portfolio.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://devcamp-portfolio.herokuapp.com', 'http://devcamp-portfolio.herokuapp.com', 'http://zeiny.org', 'https://zeiny.org']
+  config.action_cable.url = "wss://devcamp-portfolio.herokuapp.com/cable, wss://zeiny.org/cable"
 end

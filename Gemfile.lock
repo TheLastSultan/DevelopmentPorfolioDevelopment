@@ -70,6 +70,10 @@ GEM
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
     bcrypt (3.1.12)
+    better_errors (2.5.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
     bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
@@ -104,6 +108,7 @@ GEM
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
     equalizer (0.0.11)
+    erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -282,6 +287,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors (~> 2.5)
   bootstrap (~> 4.0.0.alpha6)
   byebug
   carrierwave (~> 1.0)
@@ -301,7 +307,7 @@ DEPENDENCIES
   kaminari (~> 1.0, >= 1.0.1)
   listen (~> 3.0.5)
   mini_magick (~> 4.6)
-  petergate (~> 1.7)
+  petergate (~> 1.6, >= 1.6.3)
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.4)
