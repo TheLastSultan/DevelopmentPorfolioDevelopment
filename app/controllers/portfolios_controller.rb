@@ -17,8 +17,9 @@ class PortfoliosController < ApplicationController
   end
 
   def search
-    byebug
-    @portfolio_items = Portfolio.joins(:technologies).where('name LIKE ?', 'React')
+    @technologies = Technology.all.uniq
+    @portfolio_items = Portfolio.joins(:technologies).where('name LIKE ?', 'React').by_position
+
     render :index
   end 
 
@@ -82,5 +83,6 @@ class PortfoliosController < ApplicationController
 
   def set_portfolio_item
     @portfolio_item = Portfolio.find(params[:id])
+    @technologies = Technology.all.uniq
   end
 end
