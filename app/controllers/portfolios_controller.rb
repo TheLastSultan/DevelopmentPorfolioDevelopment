@@ -1,11 +1,18 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
+  access all: [:show, :index, :angular, :search], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
   
   def index
-    @technologies = Technology.all.uniq
-    @portfolio_items = Portfolio.by_position
+    @technologies = Technology.all.distinct
+    angular = portfolio_params["portfolio"]
+    if angular != nil 
+    angular.to_sym.to_s.split.join
+    # angular = "React"
+    @portfolio_items = Portfolio.joins(:technologies).where("name LIKE ?", angular )
+    end
+    p @portfolio_items
+    render :index 
   end
 
   def sort
@@ -17,9 +24,9 @@ class PortfoliosController < ApplicationController
   end
 
   def search
-    @technologies = Technology.all.uniq
-    @portfolio_items = Portfolio.joins(:technologies).where('name LIKE ?', 'React').by_position
-
+  
+    @technologies = Technology.all.uniq 
+    @portfolio_items = Portfolio.joins(:technologies).where('name LIKE ?', "React")
     render :index
   end 
 
@@ -72,13 +79,7 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:title,
-                                      :subtitle,
-                                      :body,
-                                      :main_image,
-                                      :thumb_image,
-                                      technologies_attributes: [:id, :name, :_destroy]
-                                     )
+    params.permit!
   end
 
   def set_portfolio_item

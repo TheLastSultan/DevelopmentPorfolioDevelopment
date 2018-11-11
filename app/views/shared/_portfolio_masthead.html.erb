@@ -8,36 +8,16 @@
       <%= link_to 'My Blog', blogs_path, class: 'btn btn-secondary' %>
     </p>
 
-    <%=select_tag "portfolios", 
+    <%=select_tag "portfolio", 
     options_from_collection_for_select(@technologies, "name", "name"), 
     include_blank: true,
     id:"select_tag_id",
     data: {
       remote: true,
-      url: '/portfolios/search',
+      url: '/portfolios',
       method: 'get'
     }
     %>
 
   </div>
 </section>
-
-<script>
-  $('select_tag_id').change(function(){
-    $.ajax({
-      url: "/portfolios/search",
-      type: "get",
-      data: {select_tag_value: $('#select_tag_id option:selected').text()},
-      success: console.log("great!")
-    })
-  });
-
-  handleSelect(){
-    $.ajax({
-      url: "/portfolios/search",
-      type: "get"
-      data: {select_tag_value: $('#select_tag_id option:selected').text()},
-      success: console.log("wowza")
-    })
-  }
-</script>
