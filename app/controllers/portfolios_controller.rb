@@ -4,6 +4,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
   
   def index
+    @technologies = Technology.all.uniq
     @portfolio_items = Portfolio.by_position
   end
 
@@ -14,6 +15,12 @@ class PortfoliosController < ApplicationController
 
     render nothing: true
   end
+
+  def search
+    byebug
+    @portfolio_items = Portfolio.joins(:technologies).where('name LIKE ?', 'React')
+    render :index
+  end 
 
   def angular
     @angular_portfolio_items = Portfolio.angular
