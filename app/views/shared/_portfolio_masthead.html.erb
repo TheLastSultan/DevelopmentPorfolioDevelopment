@@ -18,6 +18,10 @@
       method: 'get'
     }
     %>
-
+   
   </div>
 </section>
+
+<script>
+    $('#select_tag_id').bind('change', function() { window.location.href =  "?q=my+website+and+clicking+around&portfolio=" + $(this).val() });
+</script>

@@ -7,13 +7,20 @@ class PortfoliosController < ApplicationController
     @technologies = Technology.all.distinct
     angular = portfolio_params["portfolio"]
     if angular != nil 
-    angular.to_sym.to_s.split.join
-    # angular = "React"
-    @portfolio_items = Portfolio.joins(:technologies).where("name LIKE ?", angular )
+      angular.to_sym.to_s.split.join
+      @portfolios = Portfolio.all
+      @portfolio_items = @portfolios.joins(:technologies).where("name LIKE ?", angular )
+      # redirect_to "portfolios/?q&portfolio=#{angular}"
+    else
+      @portfolio_items = Portfolio.all
     end
+    p portfolio_params
     p @portfolio_items
-    render :index 
+    p @portfolio_items
+    render :index
   end
+
+  # http://localhost:3000/portfolios/?q=facebook&portfolio=Angular
 
   def sort
     params[:order].each do |key, value|
