@@ -98,6 +98,7 @@ footer p {
 
 .portfolio-container {
   padding-top: 30px;
+  background: white;
 }
 
 .portfolio-box {
@@ -434,4 +435,11 @@ h6,
       color: black;
     }
   }
+}
+
+.outline {
+  border-left: solid 1px grey;
+  border-right: solid 1px grey;
+  margin-right: 1%;
+  margin-left: 5%;
 }

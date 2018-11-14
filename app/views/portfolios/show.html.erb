@@ -1,6 +1,7 @@
 <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, superscript: true, strikethrough: true, tables: true, fenced_code_blocks: true) %>
+
 <div class="container portfolio-container">
-  <div class="row">
+  <div class="row outline">
     <div class="col-md-7">
       <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
     </div>
