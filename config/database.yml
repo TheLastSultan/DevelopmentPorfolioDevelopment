@@ -79,8 +79,3 @@ test:
 production:
   <<: *default
   database: DevcampPortfolio_development
-<<<<<<< HEAD
-  # username: DevcampPortfolio
-  # password: <%= ENV['DEVCAMPPORTFOLIO_DATABASE_PASSWORD'] %>
-=======
->>>>>>> f7555c793673f73d27e9ac91ed8835e78667b4da
