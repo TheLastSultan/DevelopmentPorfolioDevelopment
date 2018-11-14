@@ -9,9 +9,9 @@ class PortfoliosController < ApplicationController
     if angular != nil 
       angular.to_sym.to_s.split.join
       @portfolios = Portfolio.all
-      @portfolio_items = @portfolios.joins(:technologies).where("name LIKE ?", angular )
+      @portfolio_items = @portfolios.joins(:technologies).where("name LIKE ?", angular ).by_position
     else
-      @portfolio_items = Portfolio.all
+      @portfolio_items = Portfolio.by_position
     end
     render :index
   end
@@ -41,7 +41,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_item = Portfolio.new(portfolio_params)
+    @portfolio_item = Portfolio.new(portfolio_params.require(:portfolio))
 
     respond_to do |format|
       if @portfolio_item.save
@@ -81,7 +81,7 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.permit!
+    params.except(:utf8, :authenticity_token, :commit).permit!
   end
 
   def set_portfolio_item
