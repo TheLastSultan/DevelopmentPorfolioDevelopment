@@ -1,4 +1,4 @@
-<section class="jumbotron text-center">
+<section class="jumbotron-transparent text-center">
 <%= video_tag(
               'merged_day_first.mp4',
               id: 'backgrounda',
@@ -11,7 +11,7 @@
   <div class="container">
     <h1 class="jumbotron-heading">Mohamed's Portfolio</h1>
     <%=image_tag("profilecut.png", class:"ovalprofile")%>
-    <p class="lead text-muted"> Welcome to my Portfolio! Here you'll find a wide array of favorite projects I built over the years. Please don't be shy, click around on my site and make use of the drop down to filter by technologies!</p>
+    <h1 class="cover-heading"> Welcome to my Portfolio! Please don't be shy, click around on my site and make use of the drop down to filter by technologies!</p>
     <p>
       <%= link_to 'Back to Portfolio Page', portfolios_path, class: 'btn btn-primary' %>
       <%= link_to 'My Blog', blogs_path, class: 'btn btn-secondary' %>
