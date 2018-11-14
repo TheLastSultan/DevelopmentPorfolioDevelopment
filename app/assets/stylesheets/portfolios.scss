@@ -3,18 +3,18 @@
 @import "gritter";
 
 @font-face {
-  font-family: 'Lato';
-  src:font-url('Lato-Regular.ttf');
+  font-family: "Lato";
+  src: font-url("Lato-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Roboto Slab';
-  src:font-url('RobotoSlab-Regular.ttf');
+  font-family: "Roboto Slab";
+  src: font-url("RobotoSlab-Regular.ttf");
 }
 
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .navbar {
@@ -47,26 +47,31 @@ body {
   background-color: #f7f7f7;
 }
 
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  font-family: 'Roboto Slab', serif;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Roboto Slab", serif;
 }
 
 .card {
   float: left;
   width: 100%;
-  padding: .75rem;
+  padding: 0.75rem;
   margin-bottom: 2rem;
   border: 0;
 }
 
 .card > img {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .card-text {
@@ -79,7 +84,7 @@ footer {
 }
 
 footer p {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Custom styles */
@@ -88,13 +93,24 @@ footer p {
   padding-top: 30px;
 }
 
-.portfolio-box{
-  border : 2px solid transparent;    
-  -webkit-transition : border 500ms ease-out; 
-  -moz-transition : border 500ms ease-out;
-  -o-transition : border 500ms ease-out;
+.portfolio-box {
+  border: 2px solid transparent;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
 }
 
-.portfolio-box:hover{
-  border : 2px solid #d3d3d3;
+.portfolio-box:hover {
+  border: 2px solid #d3d3d3;
+}
+
+#backgrounda {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  background: image-url("home_bg.png") no-repeat;
+  background-size: cover;
 }
