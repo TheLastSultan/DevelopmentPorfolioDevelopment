@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: 127.0.0.1
+  username: portfolio
+  password: allah199
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -80,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: DevcampPortfolio_production
-  username: DevcampPortfolio
-  password: <%= ENV['DEVCAMPPORTFOLIO_DATABASE_PASSWORD'] %>
+  database: DevcampPortfolio_development
