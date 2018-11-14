@@ -142,10 +142,12 @@ footer p {
  */
 
 /* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
+span {
+  a,
+  a:focus,
+  a:hover {
+    color: #fff;
+  }
 }
 
 /* Custom default button */

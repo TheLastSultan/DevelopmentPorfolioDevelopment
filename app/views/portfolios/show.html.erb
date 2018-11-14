@@ -1,3 +1,4 @@
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, superscript: true, strikethrough: true, tables: true, fenced_code_blocks: true) %>
 <div class="container portfolio-container">
   <div class="row">
     <div class="col-md-7">
@@ -5,27 +6,24 @@
     </div>
 
     <div class="col-md-5">
-      <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
       <h1><%= @portfolio_item.title %></h1>
-      <hr>
-
       <em><%= @portfolio_item.subtitle %></em>
-
-      <%= markdown.render(@portfolio_item.body).html_safe %>
-
-      <hr>
-
       <h3>Technologies Used:</h3>
 
       <% @portfolio_item.technologies.each do |t| %>
       <p><%= t.name %></p>
       <% end %>
-
+      <hr>
       <% if logged_in?(:site_admin) %>
         <div class="">
           <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
         </div>
       <% end %>
     </div>
+    
+    <div class="col-md-12">
+    <%= markdown.render(@portfolio_item.body).html_safe %>
+    </div>
+
   </div>
 </div>
