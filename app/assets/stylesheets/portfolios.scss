@@ -189,10 +189,6 @@ body {
   height: 100%;
   font-family: "Lato", sans-serif;
 }
-body {
-  color: #fff;
-  text-align: center;
-}
 
 h1,
 .h1,
@@ -372,17 +368,6 @@ h6,
   background-size: cover;
 }
 
-#backgroundo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -100;
-  background: image-url("home_bg.png") no-repeat;
-  background-size: cover;
-}
-
 .app-footer {
   color: white;
 }
@@ -429,4 +414,14 @@ h6,
 
 .masthead {
   width: 90%;
+}
+
+.alert {
+  a {
+    color: blue;
+  }
+}
+
+.masthead-brand {
+  color: white;
 }
