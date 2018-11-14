@@ -58,5 +58,9 @@ gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 
+<<<<<<< HEAD
 ruby "2.5.3"
 gem 'redcarpet', '~> 3.4'
+=======
+ruby "2.5.1"
+>>>>>>> f7555c793673f73d27e9ac91ed8835e78667b4da
