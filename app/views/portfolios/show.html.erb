@@ -8,11 +8,11 @@
 
     <div class="col-md-5">
       <h1><%= @portfolio_item.title %></h1>
-      <em><%= @portfolio_item.subtitle %></em>
-      <h3>Technologies Used:</h3>
-
+      <%= link_to "Back to Portfolio", portfolios_path, class: 'btn btn-warning' %>
+      <hr>
+      <h3>Technologies: </h3>
       <% @portfolio_item.technologies.each do |t| %>
-      <p><%= t.name %></p>
+        <p><%= t.name %></p>
       <% end %>
       <hr>
       <% if logged_in?(:site_admin) %>
