@@ -5,13 +5,13 @@
     </div>
 
     <div class="col-md-5">
+      <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
       <h1><%= @portfolio_item.title %></h1>
-
       <hr>
 
       <em><%= @portfolio_item.subtitle %></em>
 
-      <p><%= @portfolio_item.body %></p>
+      <%= markdown.render(@portfolio_item.body).html_safe %>
 
       <hr>
 
